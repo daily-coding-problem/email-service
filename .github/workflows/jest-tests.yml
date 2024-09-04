@@ -4,7 +4,7 @@ on:
     push:
         branches:
             - main
-        # Run tests on pull requests targeting the main branch
+    # Run tests on pull requests targeting the main branch
     pull_request:
         branches:
             - main
@@ -22,8 +22,11 @@ jobs:
               with:
                   node-version: '18'
 
-            - name: Install dependencies
-              run: npm install
+            - name: Install pnpm
+              run: npm install -g pnpm
 
-            - name: Run Jest tests
-              run: npm test
+            - name: Install dependencies using pnpm
+              run: pnpm install
+
+            - name: Run Jest tests using pnpm
+              run: pnpm test
