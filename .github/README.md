@@ -1,4 +1,4 @@
-# Email Generation Service
+# Email Generation Service [![Run Jest Tests](https://github.com/daily-coding-problem/email-service/actions/workflows/jest-tests.yml/badge.svg)](https://github.com/daily-coding-problem/email-service/actions/workflows/jest-tests.yml)
 
 ![Docker](https://img.shields.io/badge/-Docker-2496ED?style=flat-square&logo=Docker&logoColor=white)
 ![Express](https://img.shields.io/badge/-Express-000000?style=flat-square&logo=express&logoColor=white)
