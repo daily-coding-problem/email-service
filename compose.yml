@@ -1,0 +1,24 @@
+services:
+    email-service:
+        build: .
+        container_name: email-service
+        image: email-service:latest
+        ports:
+            - "3000:3000"
+        environment:
+            NODE_ENV: production
+        volumes:
+            - .:/usr/src/app
+            - /usr/src/app/node_modules
+        command: npm start
+
+    github-action-jest-tests:
+        build: .
+        container_name: jest-tests
+        image: jest-tests:latest
+        environment:
+            NODE_ENV: test
+        volumes:
+            - .:/usr/src/app
+            - /usr/src/app/node_modules
+        command: npm test

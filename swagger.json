@@ -1,0 +1,67 @@
+{
+	"openapi": "3.0.0",
+	"info": {
+		"title": "Email Generation API",
+		"version": "1.0.0",
+		"description": "API documentation for the email generation service"
+	},
+	"servers": [
+		{
+			"url": "http://localhost:3000",
+			"description": "Local server"
+		}
+	],
+	"paths": {
+		"/generate-email": {
+			"post": {
+				"summary": "Generate an email",
+				"description": "Generates an email based on the provided content",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"problemTitle": {
+										"type": "string"
+									},
+									"problemLink": {
+										"type": "string"
+									},
+									"problemContent": {
+										"type": "string"
+									},
+									"solutionContent": {
+										"type": "string",
+										"nullable": true
+									}
+								},
+								"required": ["problemTitle", "problemLink", "problemContent", "solutionContent"]
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "Successful response",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"html": {
+											"type": "string"
+										}
+									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "Invalid input data"
+					}
+				}
+			}
+		}
+	}
+}
