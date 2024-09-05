@@ -2,7 +2,7 @@ const React = require('react');
 const express = require('express');
 const { render } = require('@react-email/render');
 
-const DailyCodingProblem = require('../../emails/DailyCodingProblem').default;
+const EmailTemplate = require('../../emails/EmailTemplate').default;
 const { Problem } = require('../models/Problem');
 
 const router = express.Router();
@@ -21,7 +21,7 @@ router.post('/generate', async (req, res) => {
 
 	// Generate HTML using the Problem instance
 	const html = await render(
-		<DailyCodingProblem
+		<EmailTemplate
 			title={problem.title}
 			link={problem.link}
 			content={problem.content}

@@ -3,8 +3,8 @@
 import React, { useState, useEffect } from 'react';
 import { Problem } from '@/app/types/Problem';
 import axios from 'axios';
-import DailyCodingProblem from "../../../../emails/DailyCodingProblem";
 import CircularIndeterminate from "@/app/components/CircularIndeterminate";
+import EmailTemplate from "../../../../emails/EmailTemplate";
 
 export default function Page() {
 	const [problem, setProblem] = useState<Problem | null>(null);
@@ -37,7 +37,7 @@ export default function Page() {
 	return (
 		<>
 			{problem ? (
-				<DailyCodingProblem
+				<EmailTemplate
 					title={problem.title}
 					link={problem.link}
 					content={problem.content}
