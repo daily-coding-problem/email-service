@@ -8,13 +8,13 @@ import Problem from './fragments/Problem';
 import Solution from './fragments/Solution';
 import Unsubscribe from './fragments/Unsubscribe';
 
-const DailyCodingProblem = ({title, link, content, solution}) => (
+const DailyCodingProblem = ({title, link, content, solution, unsubscribeToken = '#'}) => (
 	<div className="bg-gray-100 text-black">
 		<Header/>
 		<div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-md">
 			<Problem title={title} link={link} content={content}/>
 			{solution && <Solution solution={solution}/>}
-			<Unsubscribe/>
+			<Unsubscribe unsubscribeToken={unsubscribeToken}/>
 		</div>
 		<Footer/>
 	</div>

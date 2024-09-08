@@ -16,6 +16,8 @@ router.post('/generate', async (req, res) => {
 		return res.status(400).json({ error: 'Invalid input data' });
 	}
 
+	const {unsubscribeToken} = req.query;
+
 	// Create a Problem instance
 	const problem = new Problem(title, link, content, solution);
 
@@ -26,6 +28,7 @@ router.post('/generate', async (req, res) => {
 			link={problem.link}
 			content={problem.content}
 			solution={problem.solution}
+			unsubscribeToken={unsubscribeToken}
 		/>, {
 		pretty: true
 	});
